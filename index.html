@@ -3867,7 +3867,7 @@ function detectOS() {
                         class="my-4 text-3xl font-black leading-none tracking-tight text-white md:text-5xl">
 
                     </h2>
-                    <p x-text="$t('connectInfo')" class="text-lg font-normal mb-4 text-gray-300 lg:text-xl"></p><p class="text-lg font-normal mb-4 text-gray-300 lg:text-xl">Дополнительная информация есть на нашей странице <a href="#"><b>####</b></a></p>
+                    <p x-text="$t('connectInfo')" class="text-lg font-normal mb-4 text-gray-300 lg:text-xl"></p>
                     <div id="OsContainer" class="flex flex-col gap-y-4 text-white text-sm sm:text-base">
                         <div id="iOSContainer"
                             class="flex mb-2 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 rounded-2xl drop-shadow-lg shadow-xl p-1 dark:text-white text-black">
@@ -5126,6 +5126,118 @@ function detectOS() {
                                         </div>
                                         
                                         <div class="flex flex-col gap-y-4">
+                                            <!---- Начало секции приложения --->
+                                            <div
+                                                    class="text-white bg-gradient-to-r from-rose-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
+                                                <!-- Accordion item -->
+                                                <div x-data="{ expanded: false }">
+                                                    <h2>
+                                                        <button style="direction: ltr;" id="faqs-title-01"
+                                                                type="button"
+                                                                class="flex items-center p-4 justify-between w-full text-left font-semibold"
+                                                                @click="expanded = !expanded" :aria-expanded="expanded"
+                                                                aria-controls="faqs-text-01">
+                                                            <div
+                                                                    class="flex items-center justify-start gap-x-2 text-lg sm:text-xl font-medium">
+                                                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                          d="M22.25 12.75V23.424L10.75 21.004V12.75H22.25ZM22.25 11.25V0.576L10.75 2.996V11.25H22.25ZM9.25 3.313L1.75 4.89V11.249H9.25V3.313ZM1.75 12.75H9.25V20.688L1.75 19.108V12.75Z"
+                                                                          fill="white" />
+                                                                </svg>
+                                                                <span x-text="$t('addhiddify')">
+                                                                </span>
+                                                                <div
+                                                                        class="bg-gray-100 pb-1.5 px-2 pt-1 rounded-full">
+
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                         viewBox="0 0 24 24" fill="currentColor"
+                                                                         class="w-6 h-6 fill-yellow-500 stroke-yellow-500">
+                                                                        <path fill-rule="evenodd"
+                                                                              d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                                                              clip-rule="evenodd" />
+                                                                    </svg>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                 viewBox="0 0 24 24" stroke-width="1.5"
+                                                                 stroke="currentColor"
+                                                                 :class="{'!rotate-180': expanded}"
+                                                                 class="w-6 h-6 mx-6 transform origin-center transition duration-200 ease-out">
+                                                                <path strokeLinecap="round" strokeLinejoin="round"
+                                                                      d="M4.5 8.25l7.5 7.5 7.5-7.5" />
+                                                            </svg>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="faqs-text-01" role="region"
+                                                         aria-labelledby="faqs-title-01"
+                                                         class="grid text-sm text-white overflow-hidden transition-all duration-300 ease-in-out"
+                                                         :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
+                                                        <div class="overflow-hidden">
+                                                            <div class="p-4 pb-6">
+                                                                <div
+                                                                        class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
+                                                                    <lord-icon
+                                                                            src="https://cdn.lordicon.com/mtdulhdc.json"
+                                                                            trigger="hover"
+                                                                            colors="primary:#fff,secondary:#fff"
+                                                                            class="w-12 h-12 md:w-20 md:h-20 ">
+                                                                    </lord-icon>
+                                                                    <h3 x-text="$t('downloadApp')"
+                                                                        class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">
+                                                                    </h3>
+                                                                </div>
+                                                                <p x-text="$t('clickForDownload')"
+                                                                   class="text-sm mb-4 font-normal text-white lg:text-base">
+                                                                </p>
+                                                                <a href="https://github.com/hiddify/hiddify-next/releases/download/v0.10.0/hiddify-macos-universal.zip"
+                                                                   class="flex mb-4 items-center gap-x-4 w-full bg-gray-800 shadow-md px-3 py-2 rounded-3xl justify-between">
+                                                                    <lord-icon class="w-8 h-8"
+                                                                               src="https://cdn.lordicon.com/albqovim.json"
+                                                                               trigger="loop" delay="1500"
+                                                                               colors="primary:#fff" state="intro">
+                                                                    </lord-icon>
+                                                                    <span x-text="$t('download')"></span>
+                                                                    <lord-icon class="w-8 h-8"
+                                                                               src="https://cdn.lordicon.com/albqovim.json"
+                                                                               trigger="loop" delay="1500"
+                                                                               colors="primary:#fff" state="intro">
+                                                                    </lord-icon>
+                                                                </a>
+                                                                <!---- Изменяемая вторая часть блока --->
+                                                                <div class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
+                                                                    <lord-icon src="https://cdn.lordicon.com/vcoyflbj.json" trigger="hover" colors="primary:#fff,secondary:#fff" class="w-12 h-12 md:w-20 md:h-20 ">
+                                                                    </lord-icon>
+                                                                    <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
+                                                                </div>
+                                                                <p x-text="$t('clickForAdd')"
+                                                                   class="text-sm mb-4 font-normal text-white lg:text-base">
+                                                                </p>
+                                                                <a id="mac-hiddify" class=" flex mb-4 items-center gap-x-4 w-full
+                                                                        bg-stone-800 shadow-md px-3 py-2 rounded-3xl
+                                                                        justify-between">
+                                                                    <lord-icon class="w-8 h-8"
+                                                                               src="https://cdn.lordicon.com/mrdiiocb.json"
+                                                                               trigger="loop" delay="2000"
+                                                                               colors="primary:#fff">
+                                                                    </lord-icon>
+                                                                    <span x-text="$t('AddtoApp')"></span>
+                                                                    <lord-icon class="w-8 h-8"
+                                                                               src="https://cdn.lordicon.com/mrdiiocb.json"
+                                                                               trigger="loop" delay="2000"
+                                                                               colors="primary:#fff">
+                                                                    </lord-icon>
+                                                                </a>
+                                                                <!---------------------------------------->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
                                             <div
                                                 class="text-white bg-gradient-to-r from-purple-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
                                                 <!-- Accordion item -->
@@ -5843,119 +5955,6 @@ function detectOS() {
                                             </div>
 
 
-                                            <!---- Начало секции приложения --->
-												<div
-                                                class="text-white bg-gradient-to-r from-rose-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
-                                                <!-- Accordion item -->
-                                                <div x-data="{ expanded: false }">
-                                                    <h2>
-                                                        <button style="direction: ltr;" id="faqs-title-01"
-                                                            type="button"
-                                                            class="flex items-center p-4 justify-between w-full text-left font-semibold"
-                                                            @click="expanded = !expanded" :aria-expanded="expanded"
-                                                            aria-controls="faqs-text-01">
-                                                            <div
-                                                                class="flex items-center justify-start gap-x-2 text-lg sm:text-xl font-medium">
-                                                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M22.25 12.75V23.424L10.75 21.004V12.75H22.25ZM22.25 11.25V0.576L10.75 2.996V11.25H22.25ZM9.25 3.313L1.75 4.89V11.249H9.25V3.313ZM1.75 12.75H9.25V20.688L1.75 19.108V12.75Z"
-                                                                        fill="white" />
-                                                                </svg>
-                                                                <span x-text="$t('addhiddify')">
-                                                                </span>
-                                                                <div
-                                                                        class="bg-gray-100 pb-1.5 px-2 pt-1 rounded-full">
-
-                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                            viewBox="0 0 24 24" fill="currentColor"
-                                                                            class="w-6 h-6 fill-yellow-500 stroke-yellow-500">
-                                                                            <path fill-rule="evenodd"
-                                                                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                                                                clip-rule="evenodd" />
-                                                                        </svg>
-
-
-                                                                    </div>
-                                                            </div>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                viewBox="0 0 24 24" stroke-width="1.5"
-                                                                stroke="currentColor"
-                                                                :class="{'!rotate-180': expanded}"
-                                                                class="w-6 h-6 mx-6 transform origin-center transition duration-200 ease-out">
-                                                                <path strokeLinecap="round" strokeLinejoin="round"
-                                                                    d="M4.5 8.25l7.5 7.5 7.5-7.5" />
-                                                            </svg>
-                                                        </button>
-                                                    </h2>
-                                                    <div id="faqs-text-01" role="region"
-                                                        aria-labelledby="faqs-title-01"
-                                                        class="grid text-sm text-white overflow-hidden transition-all duration-300 ease-in-out"
-                                                        :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
-                                                        <div class="overflow-hidden">
-                                                            <div class="p-4 pb-6">
-                                                                <div
-                                                                    class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
-                                                                    <lord-icon
-                                                                        src="https://cdn.lordicon.com/mtdulhdc.json"
-                                                                        trigger="hover"
-                                                                        colors="primary:#fff,secondary:#fff"
-                                                                        class="w-12 h-12 md:w-20 md:h-20 ">
-                                                                    </lord-icon>
-                                                                    <h3 x-text="$t('downloadApp')"
-                                                                        class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">
-                                                                    </h3>
-                                                                </div>
-                                                                <p x-text="$t('clickForDownload')"
-                                                                    class="text-sm mb-4 font-normal text-white lg:text-base">
-                                                                </p>
-                                                                <a href="https://github.com/hiddify/hiddify-next/releases/download/v0.10.0/hiddify-macos-universal.zip"
-                                                                    class="flex mb-4 items-center gap-x-4 w-full bg-gray-800 shadow-md px-3 py-2 rounded-3xl justify-between">
-                                                                    <lord-icon class="w-8 h-8"
-                                                                        src="https://cdn.lordicon.com/albqovim.json"
-                                                                        trigger="loop" delay="1500"
-                                                                        colors="primary:#fff" state="intro">
-                                                                    </lord-icon>
-                                                                    <span x-text="$t('download')"></span>
-                                                                    <lord-icon class="w-8 h-8"
-                                                                        src="https://cdn.lordicon.com/albqovim.json"
-                                                                        trigger="loop" delay="1500"
-                                                                        colors="primary:#fff" state="intro">
-                                                                    </lord-icon>
-                                                                </a>
-                                                                <!---- Изменяемая вторая часть блока --->
-                                                                <div class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
-                                                                    <lord-icon src="https://cdn.lordicon.com/vcoyflbj.json" trigger="hover" colors="primary:#fff,secondary:#fff" class="w-12 h-12 md:w-20 md:h-20 ">
-                                                                    </lord-icon>
-                                                                    <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
-                                                                </div>
-                                                                <p x-text="$t('clickForAdd')"
-                                                                        class="text-sm mb-4 font-normal text-white lg:text-base">
-                                                                        </p>
-                                                                    <a id="mac-hiddify" class=" flex mb-4 items-center gap-x-4 w-full
-                                                                        bg-stone-800 shadow-md px-3 py-2 rounded-3xl
-                                                                        justify-between">
-                                                                        <lord-icon class="w-8 h-8"
-                                                                            src="https://cdn.lordicon.com/mrdiiocb.json"
-                                                                            trigger="loop" delay="2000"
-                                                                            colors="primary:#fff">
-                                                                        </lord-icon>
-                                                                        <span x-text="$t('AddtoApp')"></span>
-                                                                        <lord-icon class="w-8 h-8"
-                                                                            src="https://cdn.lordicon.com/mrdiiocb.json"
-                                                                            trigger="loop" delay="2000"
-                                                                            colors="primary:#fff">
-                                                                        </lord-icon>
-                                                                    </a>
-                                                                <!---------------------------------------->
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
-
                                            
                                         </div>
                                     </div>
@@ -6002,6 +6001,118 @@ function detectOS() {
                                                 <p x-text="$t('chooseApp')" class="text-sm"></p>
                                             </div>
                                             <div class="flex flex-col gap-y-4">
+                                                <!---- Начало секции приложения --->
+                                                <div
+                                                        class="text-white bg-gradient-to-r from-teal-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
+                                                    <!-- Accordion item -->
+                                                    <div x-data="{ expanded: false }">
+                                                        <h2>
+                                                            <button style="direction: ltr;" id="faqs-title-01"
+                                                                    type="button"
+                                                                    class="flex items-center p-4 justify-between w-full text-left font-semibold"
+                                                                    @click="expanded = !expanded" :aria-expanded="expanded"
+                                                                    aria-controls="faqs-text-01">
+                                                                <div
+                                                                        class="flex items-center justify-start gap-x-2 text-lg sm:text-xl font-medium">
+                                                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                              d="M22.25 12.75V23.424L10.75 21.004V12.75H22.25ZM22.25 11.25V0.576L10.75 2.996V11.25H22.25ZM9.25 3.313L1.75 4.89V11.249H9.25V3.313ZM1.75 12.75H9.25V20.688L1.75 19.108V12.75Z"
+                                                                              fill="white" />
+                                                                    </svg>
+                                                                    <span x-text="$t('addhiddify')">
+                                                                </span>
+                                                                    <div
+                                                                            class="bg-gray-100 pb-1.5 px-2 pt-1 rounded-full">
+
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                             viewBox="0 0 24 24" fill="currentColor"
+                                                                             class="w-6 h-6 fill-yellow-500 stroke-yellow-500">
+                                                                            <path fill-rule="evenodd"
+                                                                                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                                                                  clip-rule="evenodd" />
+                                                                        </svg>
+
+
+                                                                    </div>
+                                                                </div>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                     viewBox="0 0 24 24" stroke-width="1.5"
+                                                                     stroke="currentColor"
+                                                                     :class="{'!rotate-180': expanded}"
+                                                                     class="w-6 h-6 mx-6 transform origin-center transition duration-200 ease-out">
+                                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                                          d="M4.5 8.25l7.5 7.5 7.5-7.5" />
+                                                                </svg>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="faqs-text-01" role="region"
+                                                             aria-labelledby="faqs-title-01"
+                                                             class="grid text-sm text-white overflow-hidden transition-all duration-300 ease-in-out"
+                                                             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
+                                                            <div class="overflow-hidden">
+                                                                <div class="p-4 pb-6">
+                                                                    <div
+                                                                            class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
+                                                                        <lord-icon
+                                                                                src="https://cdn.lordicon.com/mtdulhdc.json"
+                                                                                trigger="hover"
+                                                                                colors="primary:#fff,secondary:#fff"
+                                                                                class="w-12 h-12 md:w-20 md:h-20 ">
+                                                                        </lord-icon>
+                                                                        <h3 x-text="$t('downloadApp')"
+                                                                            class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">
+                                                                        </h3>
+                                                                    </div>
+                                                                    <p x-text="$t('clickForDownload')"
+                                                                       class="text-sm mb-4 font-normal text-white lg:text-base">
+                                                                    </p>
+                                                                    <a href="https://github.com/hiddify/hiddify-next/releases/latest/download/hiddify-android-universal.apk"
+                                                                       class="flex mb-4 items-center gap-x-4 w-full bg-gray-800 shadow-md px-3 py-2 rounded-3xl justify-between">
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/albqovim.json"
+                                                                                   trigger="loop" delay="1500"
+                                                                                   colors="primary:#fff" state="intro">
+                                                                        </lord-icon>
+                                                                        <span x-text="$t('download')"></span>
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/albqovim.json"
+                                                                                   trigger="loop" delay="1500"
+                                                                                   colors="primary:#fff" state="intro">
+                                                                        </lord-icon>
+                                                                    </a>
+                                                                    <!---- Изменяемая вторая часть блока --->
+                                                                    <div class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
+                                                                        <lord-icon src="https://cdn.lordicon.com/vcoyflbj.json" trigger="hover" colors="primary:#fff,secondary:#fff" class="w-12 h-12 md:w-20 md:h-20 ">
+                                                                        </lord-icon>
+                                                                        <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
+                                                                    </div>
+                                                                    <p x-text="$t('clickForAdd')"
+                                                                       class="text-sm mb-4 font-normal text-white lg:text-base">
+                                                                    </p>
+                                                                    <a id="android-hiddify" class=" flex mb-4 items-center gap-x-4 w-full
+                                                                        bg-stone-800 shadow-md px-3 py-2 rounded-3xl
+                                                                        justify-between">
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/mrdiiocb.json"
+                                                                                   trigger="loop" delay="2000"
+                                                                                   colors="primary:#fff">
+                                                                        </lord-icon>
+                                                                        <span x-text="$t('AddtoApp')"></span>
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/mrdiiocb.json"
+                                                                                   trigger="loop" delay="2000"
+                                                                                   colors="primary:#fff">
+                                                                        </lord-icon>
+                                                                    </a>
+                                                                    <!---------------------------------------->
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
                                                 <div
                                                     class="text-white bg-gradient-to-r from-slate-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
                                                     <!-- Accordion item -->
@@ -6029,19 +6140,7 @@ function detectOS() {
                                                                         class="flex items-center justify-start gap-x-2">
                                                                         <span x-text="$t('addV2rayNG')">
                                                                         </span>
-                                                                        <div
-                                                                            class="bg-gray-100 pb-1.5 px-2 pt-1 rounded-full">
 
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                viewBox="0 0 24 24" fill="currentColor"
-                                                                                class="w-6 h-6 fill-yellow-500 stroke-yellow-500">
-                                                                                <path fill-rule="evenodd"
-                                                                                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                                                                    clip-rule="evenodd" />
-                                                                            </svg>
-
-
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -6152,106 +6251,6 @@ function detectOS() {
                                                     </div>
                                                 </div>
 
-
-                                                <!---- Начало секции приложения --->
-												<div
-                                                class="text-white bg-gradient-to-r from-teal-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
-                                                <!-- Accordion item -->
-                                                <div x-data="{ expanded: false }">
-                                                    <h2>
-                                                        <button style="direction: ltr;" id="faqs-title-01"
-                                                            type="button"
-                                                            class="flex items-center p-4 justify-between w-full text-left font-semibold"
-                                                            @click="expanded = !expanded" :aria-expanded="expanded"
-                                                            aria-controls="faqs-text-01">
-                                                            <div
-                                                                class="flex items-center justify-start gap-x-2 text-lg sm:text-xl font-medium">
-                                                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M22.25 12.75V23.424L10.75 21.004V12.75H22.25ZM22.25 11.25V0.576L10.75 2.996V11.25H22.25ZM9.25 3.313L1.75 4.89V11.249H9.25V3.313ZM1.75 12.75H9.25V20.688L1.75 19.108V12.75Z"
-                                                                        fill="white" />
-                                                                </svg>
-                                                                <span x-text="$t('addhiddify')">
-                                                                </span>
-                                                            </div>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                viewBox="0 0 24 24" stroke-width="1.5"
-                                                                stroke="currentColor"
-                                                                :class="{'!rotate-180': expanded}"
-                                                                class="w-6 h-6 mx-6 transform origin-center transition duration-200 ease-out">
-                                                                <path strokeLinecap="round" strokeLinejoin="round"
-                                                                    d="M4.5 8.25l7.5 7.5 7.5-7.5" />
-                                                            </svg>
-                                                        </button>
-                                                    </h2>
-                                                    <div id="faqs-text-01" role="region"
-                                                        aria-labelledby="faqs-title-01"
-                                                        class="grid text-sm text-white overflow-hidden transition-all duration-300 ease-in-out"
-                                                        :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
-                                                        <div class="overflow-hidden">
-                                                            <div class="p-4 pb-6">
-                                                                <div
-                                                                    class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
-                                                                    <lord-icon
-                                                                        src="https://cdn.lordicon.com/mtdulhdc.json"
-                                                                        trigger="hover"
-                                                                        colors="primary:#fff,secondary:#fff"
-                                                                        class="w-12 h-12 md:w-20 md:h-20 ">
-                                                                    </lord-icon>
-                                                                    <h3 x-text="$t('downloadApp')"
-                                                                        class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">
-                                                                    </h3>
-                                                                </div>
-                                                                <p x-text="$t('clickForDownload')"
-                                                                    class="text-sm mb-4 font-normal text-white lg:text-base">
-                                                                </p>
-                                                                <a href="https://github.com/hiddify/hiddify-next/releases/download/v0.10.0/hiddify-android-universal.apk"
-                                                                    class="flex mb-4 items-center gap-x-4 w-full bg-gray-800 shadow-md px-3 py-2 rounded-3xl justify-between">
-                                                                    <lord-icon class="w-8 h-8"
-                                                                        src="https://cdn.lordicon.com/albqovim.json"
-                                                                        trigger="loop" delay="1500"
-                                                                        colors="primary:#fff" state="intro">
-                                                                    </lord-icon>
-                                                                    <span x-text="$t('download')"></span>
-                                                                    <lord-icon class="w-8 h-8"
-                                                                        src="https://cdn.lordicon.com/albqovim.json"
-                                                                        trigger="loop" delay="1500"
-                                                                        colors="primary:#fff" state="intro">
-                                                                    </lord-icon>
-                                                                </a>
-                                                                <!---- Изменяемая вторая часть блока --->
-                                                                <div class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
-                                                                    <lord-icon src="https://cdn.lordicon.com/vcoyflbj.json" trigger="hover" colors="primary:#fff,secondary:#fff" class="w-12 h-12 md:w-20 md:h-20 ">
-                                                                    </lord-icon>
-                                                                    <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
-                                                                </div>
-                                                                <p x-text="$t('clickForAdd')"
-                                                                        class="text-sm mb-4 font-normal text-white lg:text-base">
-                                                                        </p>
-                                                                    <a id="android-hiddify" class=" flex mb-4 items-center gap-x-4 w-full
-                                                                        bg-stone-800 shadow-md px-3 py-2 rounded-3xl
-                                                                        justify-between">
-                                                                        <lord-icon class="w-8 h-8"
-                                                                            src="https://cdn.lordicon.com/mrdiiocb.json"
-                                                                            trigger="loop" delay="2000"
-                                                                            colors="primary:#fff">
-                                                                        </lord-icon>
-                                                                        <span x-text="$t('AddtoApp')"></span>
-                                                                        <lord-icon class="w-8 h-8"
-                                                                            src="https://cdn.lordicon.com/mrdiiocb.json"
-                                                                            trigger="loop" delay="2000"
-                                                                            colors="primary:#fff">
-                                                                        </lord-icon>
-                                                                    </a>
-                                                                <!---------------------------------------->
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
 
                                                 <div
                                                     class="text-white bg-gradient-to-r from-rose-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
@@ -6812,6 +6811,118 @@ function detectOS() {
                                                 <p x-text="$t('chooseApp')" class="text-sm"></p>
                                             </div>
                                             <div class="flex flex-col gap-y-4">
+                                                <!---- Начало секции приложения --->
+                                                <div
+                                                        class="text-white bg-gradient-to-r from-teal-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
+                                                    <!-- Accordion item -->
+                                                    <div x-data="{ expanded: false }">
+                                                        <h2>
+                                                            <button style="direction: ltr;" id="faqs-title-01"
+                                                                    type="button"
+                                                                    class="flex items-center p-4 justify-between w-full text-left font-semibold"
+                                                                    @click="expanded = !expanded" :aria-expanded="expanded"
+                                                                    aria-controls="faqs-text-01">
+                                                                <div
+                                                                        class="flex items-center justify-start gap-x-2 text-lg sm:text-xl font-medium">
+                                                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                                                                         xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                              d="M22.25 12.75V23.424L10.75 21.004V12.75H22.25ZM22.25 11.25V0.576L10.75 2.996V11.25H22.25ZM9.25 3.313L1.75 4.89V11.249H9.25V3.313ZM1.75 12.75H9.25V20.688L1.75 19.108V12.75Z"
+                                                                              fill="white" />
+                                                                    </svg>
+                                                                    <span x-text="$t('addhiddify')">
+                                                                </span>
+                                                                    <div
+                                                                            class="bg-gray-100 pb-1.5 px-2 pt-1 rounded-full">
+
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                             viewBox="0 0 24 24" fill="currentColor"
+                                                                             class="w-6 h-6 fill-yellow-500 stroke-yellow-500">
+                                                                            <path fill-rule="evenodd"
+                                                                                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                                                                                  clip-rule="evenodd" />
+                                                                        </svg>
+
+
+                                                                    </div>
+                                                                </div>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                     viewBox="0 0 24 24" stroke-width="1.5"
+                                                                     stroke="currentColor"
+                                                                     :class="{'!rotate-180': expanded}"
+                                                                     class="w-6 h-6 mx-6 transform origin-center transition duration-200 ease-out">
+                                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                                          d="M4.5 8.25l7.5 7.5 7.5-7.5" />
+                                                                </svg>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="faqs-text-01" role="region"
+                                                             aria-labelledby="faqs-title-01"
+                                                             class="grid text-sm text-white overflow-hidden transition-all duration-300 ease-in-out"
+                                                             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
+                                                            <div class="overflow-hidden">
+                                                                <div class="p-4 pb-6">
+                                                                    <div
+                                                                            class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
+                                                                        <lord-icon
+                                                                                src="https://cdn.lordicon.com/mtdulhdc.json"
+                                                                                trigger="hover"
+                                                                                colors="primary:#fff,secondary:#fff"
+                                                                                class="w-12 h-12 md:w-20 md:h-20 ">
+                                                                        </lord-icon>
+                                                                        <h3 x-text="$t('downloadApp')"
+                                                                            class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">
+                                                                        </h3>
+                                                                    </div>
+                                                                    <p x-text="$t('clickForDownload')"
+                                                                       class="text-sm mb-4 font-normal text-white lg:text-base">
+                                                                    </p>
+                                                                    <a href="https://github.com/hiddify/hiddify-next/releases/download/v0.10.0/hiddify-windows-x64-setup.zip"
+                                                                       class="flex mb-4 items-center gap-x-4 w-full bg-gray-800 shadow-md px-3 py-2 rounded-3xl justify-between">
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/albqovim.json"
+                                                                                   trigger="loop" delay="1500"
+                                                                                   colors="primary:#fff" state="intro">
+                                                                        </lord-icon>
+                                                                        <span x-text="$t('download')"></span>
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/albqovim.json"
+                                                                                   trigger="loop" delay="1500"
+                                                                                   colors="primary:#fff" state="intro">
+                                                                        </lord-icon>
+                                                                    </a>
+                                                                    <!---- Изменяемая вторая часть блока --->
+                                                                    <div class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
+                                                                        <lord-icon src="https://cdn.lordicon.com/vcoyflbj.json" trigger="hover" colors="primary:#fff,secondary:#fff" class="w-12 h-12 md:w-20 md:h-20 ">
+                                                                        </lord-icon>
+                                                                        <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
+                                                                    </div>
+                                                                    <p x-text="$t('clickForAdd')"
+                                                                       class="text-sm mb-4 font-normal text-white lg:text-base">
+                                                                    </p>
+                                                                    <a id="win-hiddify" class=" flex mb-4 items-center gap-x-4 w-full
+                                                                        bg-stone-800 shadow-md px-3 py-2 rounded-3xl
+                                                                        justify-between">
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/mrdiiocb.json"
+                                                                                   trigger="loop" delay="2000"
+                                                                                   colors="primary:#fff">
+                                                                        </lord-icon>
+                                                                        <span x-text="$t('AddtoApp')"></span>
+                                                                        <lord-icon class="w-8 h-8"
+                                                                                   src="https://cdn.lordicon.com/mrdiiocb.json"
+                                                                                   trigger="loop" delay="2000"
+                                                                                   colors="primary:#fff">
+                                                                        </lord-icon>
+                                                                    </a>
+                                                                    <!---------------------------------------->
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
                                                 <div
                                                     class="text-white bg-gradient-to-r from-amber-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
                                                     <!-- Accordion item -->
@@ -6962,16 +7073,16 @@ function detectOS() {
                                                                     </lord-icon>
                                                                     <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
                                                                 </div>
-                                                                <p x-text="$t('clickForAdd')" class="text-sm mb-4 font-normal text-white lg:text-base">Чтобы получить детальную инструкцию по настройке приложения, перейдите на нашу Wiki-страничку</p>
-                                                                <a class=" flex mb-4 items-center gap-x-4 w-full
-                                                                    bg-stone-800 shadow-md px-3 py-2 rounded-3xl
-                                                                    justify-between" href="https://wiki.vsemvpn.com/nastroika-podklyuchenii/windows">
-                                                                    <lord-icon class="w-8 h-8" src="https://cdn.lordicon.com/mrdiiocb.json" trigger="loop" delay="2000" colors="primary:#fff">
-                                                                    </lord-icon>
-                                                                    <span>Перейти на сайт Wiki.VsemVPN.com</span>
-                                                                    <lord-icon class="w-8 h-8" src="https://cdn.lordicon.com/mrdiiocb.json" trigger="loop" delay="2000" colors="primary:#fff">
-                                                                    </lord-icon>
-                                                                </a>
+<!--                                                                <p x-text="$t('clickForAdd')" class="text-sm mb-4 font-normal text-white lg:text-base">Чтобы получить детальную инструкцию по настройке приложения, перейдите на нашу Wiki-страничку</p>-->
+<!--                                                                <a class=" flex mb-4 items-center gap-x-4 w-full-->
+<!--                                                                    bg-stone-800 shadow-md px-3 py-2 rounded-3xl-->
+<!--                                                                    justify-between" href="https://wiki.vsemvpn.com/nastroika-podklyuchenii/windows">-->
+<!--                                                                    <lord-icon class="w-8 h-8" src="https://cdn.lordicon.com/mrdiiocb.json" trigger="loop" delay="2000" colors="primary:#fff">-->
+<!--                                                                    </lord-icon>-->
+<!--                                                                    <span>Перейти на сайт Wiki.VsemVPN.com</span>-->
+<!--                                                                    <lord-icon class="w-8 h-8" src="https://cdn.lordicon.com/mrdiiocb.json" trigger="loop" delay="2000" colors="primary:#fff">-->
+<!--                                                                    </lord-icon>-->
+<!--                                                                </a>-->
                                                                 <!---------------------------------------->
                                                             </div>
                                                             
@@ -6981,118 +7092,7 @@ function detectOS() {
                                             </div>
                                             <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
 
-                                             <!---- Начало секции приложения --->
-												<div
-                                                class="text-white bg-gradient-to-r from-teal-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
-                                                <!-- Accordion item -->
-                                                <div x-data="{ expanded: false }">
-                                                    <h2>
-                                                        <button style="direction: ltr;" id="faqs-title-01"
-                                                            type="button"
-                                                            class="flex items-center p-4 justify-between w-full text-left font-semibold"
-                                                            @click="expanded = !expanded" :aria-expanded="expanded"
-                                                            aria-controls="faqs-text-01">
-                                                            <div
-                                                                class="flex items-center justify-start gap-x-2 text-lg sm:text-xl font-medium">
-                                                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M22.25 12.75V23.424L10.75 21.004V12.75H22.25ZM22.25 11.25V0.576L10.75 2.996V11.25H22.25ZM9.25 3.313L1.75 4.89V11.249H9.25V3.313ZM1.75 12.75H9.25V20.688L1.75 19.108V12.75Z"
-                                                                        fill="white" />
-                                                                </svg>
-                                                                <span x-text="$t('addhiddify')">
-                                                                </span>
-                                                                <div
-                                                                        class="bg-gray-100 pb-1.5 px-2 pt-1 rounded-full">
 
-                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                            viewBox="0 0 24 24" fill="currentColor"
-                                                                            class="w-6 h-6 fill-yellow-500 stroke-yellow-500">
-                                                                            <path fill-rule="evenodd"
-                                                                                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                                                                                clip-rule="evenodd" />
-                                                                        </svg>
-
-
-                                                                    </div>
-                                                            </div>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                                viewBox="0 0 24 24" stroke-width="1.5"
-                                                                stroke="currentColor"
-                                                                :class="{'!rotate-180': expanded}"
-                                                                class="w-6 h-6 mx-6 transform origin-center transition duration-200 ease-out">
-                                                                <path strokeLinecap="round" strokeLinejoin="round"
-                                                                    d="M4.5 8.25l7.5 7.5 7.5-7.5" />
-                                                            </svg>
-                                                        </button>
-                                                    </h2>
-                                                    <div id="faqs-text-01" role="region"
-                                                        aria-labelledby="faqs-title-01"
-                                                        class="grid text-sm text-white overflow-hidden transition-all duration-300 ease-in-out"
-                                                        :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
-                                                        <div class="overflow-hidden">
-                                                            <div class="p-4 pb-6">
-                                                                <div
-                                                                    class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
-                                                                    <lord-icon
-                                                                        src="https://cdn.lordicon.com/mtdulhdc.json"
-                                                                        trigger="hover"
-                                                                        colors="primary:#fff,secondary:#fff"
-                                                                        class="w-12 h-12 md:w-20 md:h-20 ">
-                                                                    </lord-icon>
-                                                                    <h3 x-text="$t('downloadApp')"
-                                                                        class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">
-                                                                    </h3>
-                                                                </div>
-                                                                <p x-text="$t('clickForDownload')"
-                                                                    class="text-sm mb-4 font-normal text-white lg:text-base">
-                                                                </p>
-                                                                <a href="https://github.com/hiddify/hiddify-next/releases/download/v0.10.0/hiddify-windows-x64-setup.zip"
-                                                                    class="flex mb-4 items-center gap-x-4 w-full bg-gray-800 shadow-md px-3 py-2 rounded-3xl justify-between">
-                                                                    <lord-icon class="w-8 h-8"
-                                                                        src="https://cdn.lordicon.com/albqovim.json"
-                                                                        trigger="loop" delay="1500"
-                                                                        colors="primary:#fff" state="intro">
-                                                                    </lord-icon>
-                                                                    <span x-text="$t('download')"></span>
-                                                                    <lord-icon class="w-8 h-8"
-                                                                        src="https://cdn.lordicon.com/albqovim.json"
-                                                                        trigger="loop" delay="1500"
-                                                                        colors="primary:#fff" state="intro">
-                                                                    </lord-icon>
-                                                                </a>
-                                                                <!---- Изменяемая вторая часть блока --->
-                                                                <div class="flex items-center rtl:mr-[-10px] ltr:ml-[-10px] md:rtl:mr-[-20px] md:ltr:ml-[-20px]">
-                                                                    <lord-icon src="https://cdn.lordicon.com/vcoyflbj.json" trigger="hover" colors="primary:#fff,secondary:#fff" class="w-12 h-12 md:w-20 md:h-20 ">
-                                                                    </lord-icon>
-                                                                    <h3 x-text="$t('addConfigs')" class="text-xl font-black leading-none tracking-tight text-white md:text-2xl">Добавьте конфиги</h3>
-                                                                </div>
-                                                                <p x-text="$t('clickForAdd')"
-                                                                        class="text-sm mb-4 font-normal text-white lg:text-base">
-                                                                        </p>
-                                                                    <a id="win-hiddify" class=" flex mb-4 items-center gap-x-4 w-full
-                                                                        bg-stone-800 shadow-md px-3 py-2 rounded-3xl
-                                                                        justify-between">
-                                                                        <lord-icon class="w-8 h-8"
-                                                                            src="https://cdn.lordicon.com/mrdiiocb.json"
-                                                                            trigger="loop" delay="2000"
-                                                                            colors="primary:#fff">
-                                                                        </lord-icon>
-                                                                        <span x-text="$t('AddtoApp')"></span>
-                                                                        <lord-icon class="w-8 h-8"
-                                                                            src="https://cdn.lordicon.com/mrdiiocb.json"
-                                                                            trigger="loop" delay="2000"
-                                                                            colors="primary:#fff">
-                                                                        </lord-icon>
-                                                                    </a>
-                                                                <!---------------------------------------->
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-----------КОНЕЦ СЕКЦИИ ПРИЛОЖЕНИЯ----------------------------->
                                                 <div
                                                     class="text-white bg-gradient-to-r from-rose-500 via-zinc-600 to-gray-900 focus:ring-4 focus:outline-none focus:ring-teal-300 transition-all duration-300 font-medium rounded-2xl">
                                                     <!-- Accordion item -->
@@ -7200,7 +7200,6 @@ function detectOS() {
                                 </div>
                             </div>
                         </div>
-                        <p x-text="$t('macInfo')" class="text-lg font-normal mb-4 text-gray-300 lg:text-xl"></p>
                     </div>
                     <h2 x-text="$t('generalAccess')"
                         class="my-4 text-3xl font-black leading-none tracking-tight text-white md:text-5xl">
@@ -7263,8 +7262,7 @@ function detectOS() {
                     </h2>
                     <p x-text="$t('supTelInfo')" class="text-lg font-normal mb-4 text-gray-300 lg:text-xl"></p>
                     <div class="flex flex-col gap-y-4">
-                        <h2 class="font-bold text-white text-2xl mb-2" x-text="$t('sup')"></h2>
-                        <a href="https://t.me/"
+                        <a href="https://t.me/vpnsibcom_bot"
                             class="py-3 px-4 transition-all duration-200 inline-flex gap-x-3 justify-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="w-6 h-6 fill-white"
                                 viewBox="0 0 50 50">
@@ -7274,12 +7272,11 @@ function detectOS() {
                             </svg>
 
 
-                            <span class="sm:text-lg" x-text="$t('support')"></span>
+                            <span class="sm:text-lg">Поддержка</span>
                         </a>
                     </div>
                     <div class="flex flex-col gap-y-4">
-                        <h2 class="font-bold text-white text-2xl mb-2" x-text="$t('sup')">Наш канал</h2>
-                        <a href="https://t.me/"
+                        <a href="https://t.me/vpnsibcom"
                             class="py-3 px-4 transition-all duration-200 inline-flex gap-x-3 justify-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="w-6 h-6 fill-white"
                                 viewBox="0 0 50 50">
@@ -7289,7 +7286,21 @@ function detectOS() {
                             </svg>
 
 
-                            <span class="sm:text-lg" x-text="$t('telchanel')"></span>
+                            <span class="sm:text-lg">Телеграм канал</span>
+                        </a>
+                    </div>
+                    <div class="flex flex-col gap-y-4">
+                        <a href="https://t.me/vpnsibcom_bot"
+                           class="py-3 px-4 transition-all duration-200 inline-flex gap-x-3 justify-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="w-6 h-6 fill-white"
+                                 viewBox="0 0 50 50">
+                                <path
+                                        d="M25,2c12.703,0,23,10.297,23,23S37.703,48,25,48S2,37.703,2,25S12.297,2,25,2z M32.934,34.375	c0.423-1.298,2.405-14.234,2.65-16.783c0.074-0.772-0.17-1.285-0.648-1.514c-0.578-0.278-1.434-0.139-2.427,0.219	c-1.362,0.491-18.774,7.884-19.78,8.312c-0.954,0.405-1.856,0.847-1.856,1.487c0,0.45,0.267,0.703,1.003,0.966	c0.766,0.273,2.695,0.858,3.834,1.172c1.097,0.303,2.346,0.04,3.046-0.395c0.742-0.461,9.305-6.191,9.92-6.693	c0.614-0.502,1.104,0.141,0.602,0.644c-0.502,0.502-6.38,6.207-7.155,6.997c-0.941,0.959-0.273,1.953,0.358,2.351	c0.721,0.454,5.906,3.932,6.687,4.49c0.781,0.558,1.573,0.811,2.298,0.811C32.191,36.439,32.573,35.484,32.934,34.375z">
+                                </path>
+                            </svg>
+
+
+                            <span class="sm:text-lg">Телеграм бот</span>
                         </a>
                     </div>
                     <div class="flex mt-6 items-center justify-center gap-x-4 mb-4">
@@ -7299,14 +7310,16 @@ function detectOS() {
                             <lord-icon src="https://cdn.lordicon.com/fqrjldna.json" trigger="loop" delay="2000"
                                 colors="primary:#000,secondary:#000" class="w-10 h-10">
                             </lord-icon>
-                        </button>
- <select style="
-               text-indent:15px;
-               height:50px;" id="countries"
-                            class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-3.5 bg-gray-100 border-gray-200 placeholder-gray-800 text-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
-                            <option value="ru">Русский</option>
 
-                        </select>
+                        </button>
+                        QR-код
+<!-- <select style="-->
+<!--               text-indent:15px;-->
+<!--               height:50px;" id="countries"-->
+<!--                            class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-3.5 bg-gray-100 border-gray-200 placeholder-gray-800 text-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">-->
+<!--                            <option value="ru">Русский</option>-->
+
+<!--                        </select>-->
                         
                     </div>
                 </div>
